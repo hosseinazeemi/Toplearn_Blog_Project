@@ -1,8 +1,21 @@
 ﻿@inherits LayoutComponentBase
 
-
-<DashboardHeader />
-<main>
-    @Body
-</main>
-<DashboardFooter />
+<MudRTLProvider RightToLeft="true">
+    <MudThemeProvider />
+    <MudDialogProvider />
+    <MudSnackbarProvider />
+    <MudLayout>
+       @* <MudMainContent>
+            <DashboardHeader />
+            <main>
+                @Body
+            </main>
+            <DashboardFooter />
+        </MudMainContent>*@
+         <DashboardHeader />
+            <main>
+                @Body
+            </main>
+            <DashboardFooter />
+    </MudLayout>
+</MudRTLProvider>
