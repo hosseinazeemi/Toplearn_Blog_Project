@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@namespace ToplearnBlogProject.UI.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <base href="~/" />
+    <link href="ToplearnBlogProject.UI.styles.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Blogzine">
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="~/assets/vendor/font-awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/vendor/tiny-slider/tiny-slider.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/vendor/plyr/plyr.css">
+    <link id="style-switch" rel="stylesheet" type="text/css" href="~/assets/css/style-rtl.css">
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head>
+<body>
+    @RenderBody()
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+    <script src="~/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/vendor/tiny-slider/tiny-slider-rtl.js"></script>
+    <script src="~/assets/vendor/sticky-js/sticky.min.js"></script>
+    <script src="~/assets/vendor/plyr/plyr.js"></script>
+    <script src="~/assets/js/functions.js"></script>
+</body>
+</html>
