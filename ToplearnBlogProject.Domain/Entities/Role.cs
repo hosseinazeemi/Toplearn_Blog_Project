@@ -9,7 +9,7 @@ namespace ToplearnBlogProject.Domain.Entities
     public class Role
     {
         public int Id { get; set; }
-        public string EnName { get; set; }
         public string FaName { get; set; }
+        public string EnName { get; set; }
     }
 }
