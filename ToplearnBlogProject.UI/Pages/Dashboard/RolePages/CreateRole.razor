@@ -1,0 +1,655 @@
+﻿@using ToplearnBlogProject.UI.Shared.Dashboard.Layouts
+@layout DashboardLayout
+@page "/dashboard/roles/create"
+
+<section class="py-4">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-12">
+                <!-- Counter START -->
+                <div class="row g-4">
+
+                    <!-- Counter item -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card card-body border p-3">
+                            <div class="d-flex align-items-center">
+                                <!-- Icon -->
+                                <div class="icon-xl fs-1 bg-success bg-opacity-10 rounded-3 text-success">
+                                    <i class="bi bi-people-fill"></i>
+                                </div>
+                                <!-- Content -->
+                                <div class="ms-3">
+                                    <h3>134K</h3>
+                                    <h6 class="mb-0">بازدید صفحه</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Counter item -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card card-body border p-3">
+                            <div class="d-flex align-items-center">
+                                <!-- Icon -->
+                                <div class="icon-xl fs-1 bg-primary bg-opacity-10 rounded-3 text-primary">
+                                    <i class="bi bi-file-earmark-text-fill"></i>
+                                </div>
+                                <!-- Content -->
+                                <div class="ms-3">
+                                    <h3>180</h3>
+                                    <h6 class="mb-0">اخبار جدید</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Counter item -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card card-body border p-3">
+                            <div class="d-flex align-items-center">
+                                <!-- Icon -->
+                                <div class="icon-xl fs-1 bg-danger bg-opacity-10 rounded-3 text-danger">
+                                    <i class="bi bi-suit-heart-fill"></i>
+                                </div>
+                                <!-- Content -->
+                                <div class="ms-3">
+                                    <h3>2150</h3>
+                                    <h6 class="mb-0">لایک</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Counter item -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card card-body border p-3">
+                            <div class="d-flex align-items-center">
+                                <!-- Icon -->
+                                <div class="icon-xl fs-1 bg-info bg-opacity-10 rounded-3 text-info">
+                                    <i class="bi bi-bar-chart-line-fill"></i>
+                                </div>
+                                <!-- Content -->
+                                <div class="ms-3">
+                                    <h3>84K</h3>
+                                    <h6 class="mb-0">بازدیدکننده</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Counter END -->
+            </div>
+
+            <div class="col-xl-8">
+                <!-- Chart START -->
+                <div class="card border h-100">
+
+                    <!-- Card header -->
+                    <div class="card-header p-3 border-bottom">
+                        <h4 class="card-header-title mb-0">بازدید هفته</h4>
+                    </div>
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- Apex chart -->
+                        <div id="apexChartTrafficStats" class="mt-2"></div>
+                    </div>
+                </div>
+                <!-- Chart END -->
+            </div>
+
+            <div class="col-md-6 col-xxl-4">
+                <!-- Latest blog START -->
+                <div class="card border h-100">
+                    <!-- Card header -->
+                    <div class="card-header border-bottom p-3">
+                        <h5 class="card-header-title mb-0">آخرین اخبار</h5>
+                    </div>
+
+                    <!-- Card body START -->
+                    <div class="card-body p-3">
+
+                        <div class="row">
+                            <!-- Blog item -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center position-relative">
+                                    <img class="w-60 rounded" src="assets/images/blog/1by1/01.jpg" alt="product">
+                                    <div class="ms-3">
+                                        <a href="#" class="h6 stretched-link">رازهای کوچک کثیف در مورد صنعت تجارت</a>
+                                        <p class="small mb-0">17 تیر، 1400</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Divider -->
+                            <hr class="my-3">
+
+                            <!-- Blog item -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center position-relative">
+                                    <img class="w-60 rounded" src="assets/images/blog/1by1/02.jpg" alt="product">
+                                    <div class="ms-3">
+                                        <a href="#" class="h6 stretched-link">فیلم‌های بالیوودی الگوی ضدانقلاب شده!</a>
+                                        <p class="small mb-0">11 دی، 1400</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Divider -->
+                            <hr class="my-3">
+
+                            <!-- Blog item -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center position-relative">
+                                    <img class="w-60 rounded" src="assets/images/blog/1by1/03.jpg" alt="product">
+                                    <div class="ms-3">
+                                        <a href="#" class="h6 stretched-link">عادات بدی که افراد در صنعت باید آنها را ترک کنند!</a>
+                                        <p class="small mb-0">1 خرداد، 1400</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card body END -->
+                    <!-- Card footer -->
+                    <div class="card-footer border-top text-center p-3">
+                        <a href="#">مشاهده همه</a>
+                    </div>
+
+                </div>
+                <!-- Latest blog END -->
+            </div>
+
+            <div class="col-md-6 col-xxl-4">
+                <!-- Recent comment START -->
+                <div class="card border h-100">
+                    <!-- Card header -->
+                    <div class="card-header border-bottom p-3">
+                        <h5 class="card-header-title mb-0">آخرین نظرات</h5>
+                    </div>
+
+                    <!-- Card body START -->
+                    <div class="card-body p-3">
+
+                        <div class="row">
+                            <!-- Comment item -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center position-relative">
+                                    <!-- Avatar -->
+                                    <div class="avatar avatar-lg flex-shrink-0">
+                                        <img class="avatar-img rounded-2" src="assets/images/avatar/06.jpg" alt="avatar">
+                                    </div>
+                                    <!-- Info -->
+                                    <div class="ms-3">
+                                        <p class="mb-1"> <a class="h6 fw-normal stretched-link" href="#"> وقتی ثروت‌ های بزرگ به دست برخی مردم می‌افتد... </a></p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="small mb-0">با الهام کریمی</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Divider -->
+                            <hr class="my-3">
+
+                            <!-- Comment item -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center position-relative">
+                                    <!-- Avatar -->
+                                    <div class="avatar avatar-lg flex-shrink-0">
+                                        <img class="avatar-img rounded-2" src="assets/images/avatar/08.jpg" alt="avatar">
+                                    </div>
+                                    <!-- Info -->
+                                    <div class="ms-3">
+                                        <p class="mb-1"> <a class="h6 fw-normal stretched-link" href="#"> وقتی ثروت‌ های بزرگ به دست برخی مردم می‌افتد... </a></p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="small mb-0">با سارا موحد</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Divider -->
+                            <hr class="my-3">
+
+                            <!-- Comment item -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center position-relative">
+                                    <!-- Avatar -->
+                                    <div class="avatar avatar-lg flex-shrink-0">
+                                        <img class="avatar-img rounded-2" src="assets/images/avatar/04.jpg" alt="avatar">
+                                    </div>
+                                    <!-- Info -->
+                                    <div class="ms-3">
+                                        <p class="mb-1"> <a class="h6 fw-normal stretched-link" href="#"> وقتی ثروت‌ های بزرگ به دست برخی مردم می‌افتد </a></p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="small mb-0">با سهراب رضایی</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Divider -->
+                            <hr class="my-3">
+
+                            <!-- Comment item -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center position-relative">
+                                    <!-- Avatar -->
+                                    <div class="avatar avatar-lg flex-shrink-0">
+                                        <img class="avatar-img rounded-2" src="assets/images/avatar/05.jpg" alt="avatar">
+                                    </div>
+                                    <!-- Info -->
+                                    <div class="ms-3">
+                                        <p class="mb-1"> <a class="h6 fw-normal stretched-link" href="#"> وقتی ثروت‌ های بزرگ به دست برخی مردم می‌افتد </a></p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="small mb-0">با نگین جوان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card body END -->
+                </div>
+                <!-- Recent comment END -->
+            </div>
+
+            <div class="col-md-6 col-xxl-4">
+                <!-- Notice board START -->
+                <div class="card border h-100">
+                    <!-- Card header -->
+                    <div class="card-header border-bottom d-flex justify-content-between align-items-center  p-3">
+                        <h5 class="card-header-title mb-0">نوتیفیکیشن ها</h5>
+                        <!-- Dropdown button -->
+                        <div class="dropdown text-end">
+                            <a href="#" class="btn border-0 p-0 mb-0" role="button" id="dropdownShare3" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots fa-fw"></i>
+                            </a>
+                            <!-- dropdown button -->
+                            <ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare3">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square fa-fw me-2"></i>ویرایش</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-trash fa-fw me-2"></i>حذف</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card body START -->
+                    <div class="card-body p-3">
+                        <div class="custom-scrollbar h-350">
+                            <div class="row">
+                                <!-- Notice board item -->
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-between position-relative">
+                                        <div class="d-sm-flex">
+                                            <div class="icon-lg bg-warning bg-opacity-15 text-warning rounded-2 flex-shrink-0">
+                                                <i class="fas fa-user-tie fs-5"></i>
+                                            </div>
+                                            <!-- Info -->
+                                            <div class="ms-0 ms-sm-3 mt-2 mt-sm-0">
+                                                <h6 class="mb-0"><a href="#" class="stretched-link">ثبت نام نویسنده جدید</a></h6>
+                                                <p class="mb-0">پسرک گفت بیا این کفشا رو بپوش…</p>
+                                                <span class="small">5 دقیقه پیش</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Divider -->
+                                <hr class="my-3">
+
+                                <!-- Notice board item -->
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-between position-relative">
+                                        <div class="d-sm-flex">
+                                            <div class="icon-lg bg-success bg-opacity-10 text-success rounded-2 flex-shrink-0">
+                                                <i class="bi bi-chat-left-quote-fill fs-5"></i>
+                                            </div>
+                                            <!-- Info -->
+                                            <div class="ms-0 ms-sm-3 mt-2 mt-sm-0">
+                                                <h6 class="mb-0"><a href="#" class="stretched-link">افزودن 5 خبر جدید</a></h6>
+                                                <p class="mb-0">پسرک گفت بیا این کفشا رو بپوش…</p>
+                                                <span class="small">4 ساعت پیش</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Divider -->
+                                <hr class="my-3">
+
+                                <!-- Notice board item -->
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-between position-relative">
+                                        <div class="d-sm-flex">
+                                            <div class="icon-lg bg-danger bg-opacity-10 text-danger rounded-2 flex-shrink-0">
+                                                <i class="bi bi-bell-fill fs-5"></i>
+                                            </div>
+                                            <!-- Info -->
+                                            <div class="ms-0 ms-sm-3 mt-2 mt-sm-0">
+                                                <h6 class="mb-0"><a href="#" class="stretched-link">5 ثبت نام جدید در خبرنامه</a></h6>
+                                                <p class="mb-0">پسرک گفت بیا این کفشا رو بپوش…</p>
+                                                <span class="small">4 ساعت پیش</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Divider -->
+                                <hr class="my-3">
+
+                                <!-- Notice board item -->
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-between position-relative">
+                                        <div class="d-sm-flex">
+                                            <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-2 flex-shrink-0"><i class="fas fa-globe fs-5"></i></div>
+                                            <!-- Info -->
+                                            <div class="ms-0 ms-sm-3 mt-2 mt-sm-0">
+                                                <h6 class="mb-0"><a href="#" class="stretched-link">بروزرسانی ویژگی های جدید</a></h6>
+                                                <span class="small">3 روز پیش</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- Row END -->
+                        </div>
+                    </div>
+                    <!-- Card body END -->
+                    <!-- Card footer -->
+                    <div class="card-footer border-top text-center p-3">
+                        <a href="#">مشاهده همه</a>
+                    </div>
+
+                </div>
+                <!-- Notice board END -->
+            </div>
+
+            <div class="col-md-6 col-xxl-4">
+                <div class="card border h-100">
+
+                    <!-- Card header -->
+                    <div class="card-header border-bottom d-flex justify-content-between align-items-center p-3">
+                        <h5 class="card-header-title mb-0">آمار بازدید</h5>
+                        <a href="#" class="btn btn-sm btn-link p-0 mb-0 text-reset">مشاهده همه</a>
+                    </div>
+
+                    <!-- Card body START -->
+                    <div class="card-body p-4">
+                        <!-- Chart -->
+                        <div class=" mx-auto">
+                            <div id="apexChartTrafficSources"></div>
+                        </div>
+                        <!-- Content -->
+                        <ul class="list-inline text-center mt-3">
+                            <li class="list-inline-item pe-2"><i class="text-primary fas fa-circle pe-1"></i> مرورگر </li>
+                            <li class="list-inline-item pe-2"><i class="text-success fas fa-circle pe-1"></i> وب سایت </li>
+                            <li class="list-inline-item pe-2"><i class="text-danger fas fa-circle pe-1"></i> شبکه های اجتماعی </li>
+                            <li class="list-inline-item pe-2"><i class="text-warning fas fa-circle pe-1"></i> سایر </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <!-- Blog list table START -->
+                <div class="card border bg-transparent rounded-3">
+                    <!-- Card header START -->
+                    <div class="card-header bg-transparent border-bottom p-3">
+                        <div class="d-sm-flex justify-content-between align-items-center">
+                            <h5 class="mb-2 mb-sm-0">لیست اخبار <span class="badge bg-primary bg-opacity-10 text-primary">105</span></h5>
+                            <a href="#" class="btn btn-sm btn-primary mb-0">ثبت خبر جدید</a>
+                        </div>
+                    </div>
+                    <!-- Card header END -->
+                    <!-- Card body START -->
+                    <div class="card-body">
+
+                        <!-- Search and select START -->
+                        <div class="row g-3 align-items-center justify-content-between mb-3">
+                            <!-- Search -->
+                            <div class="col-md-8">
+                                <form class="rounded position-relative">
+                                    <input class="form-control pe-5 bg-transparent" type="search" placeholder="جستجو" aria-label="Search">
+                                    <button class="btn bg-transparent border-0 px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6 "></i></button>
+                                </form>
+                            </div>
+
+                            <!-- Select option -->
+                            <div class="col-md-3">
+                                <!-- Short by filter -->
+                                <form>
+                                    <select class="form-select z-index-9 bg-transparent" aria-label=".form-select-sm">
+                                        <option value="">مرتب سازی</option>
+                                        <option>رایگان</option>
+                                        <option>جدیدترین</option>
+                                        <option>قدیمی ترین</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Search and select END -->
+                        <!-- Blog list table START -->
+                        <div class="table-responsive border-0">
+                            <table class="table align-middle p-4 mb-0 table-hover table-shrink">
+                                <!-- Table head -->
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col" class="border-0 rounded-start">عنوان خبر</th>
+                                        <th scope="col" class="border-0">نام نویسنده</th>
+                                        <th scope="col" class="border-0">تاریخ انتشار</th>
+                                        <th scope="col" class="border-0">دسته بندی</th>
+                                        <th scope="col" class="border-0">وضعیت</th>
+                                        <th scope="col" class="border-0 rounded-end">عملیات</th>
+                                    </tr>
+                                </thead>
+
+                                <!-- Table body START -->
+                                <tbody class="border-top-0">
+                                    <!-- Table item -->
+                                    <tr>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">حضور ایرانسل در رویداد فناورانه خودروهای آینده</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="mb-0"><a href="#">مریم ترابی</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>22 آذر، 1400</td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <a href="#" class="badge text-bg-warning mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>فیلم</a>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <span class="badge bg-success bg-opacity-10 text-success mb-2">فعال</span>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف"><i class="bi bi-trash"></i></a>
+                                                <a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش"><i class="bi bi-pencil-square"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Table item -->
+                                    <tr>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">رازهای کوچک کثیف در مورد صنعت تجارت</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="mb-0"><a href="#">المیرا کرمی</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>19 تیر، 1400</td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <a href="#" class="badge text-bg-info mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>سیاست</a>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <span class="badge bg-warning bg-opacity-15 text-warning mb-2">پیش نویس</span>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف"><i class="bi bi-trash"></i></a>
+                                                <a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش"><i class="bi bi-pencil-square"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Table item -->
+                                    <tr>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">طرح مجلس برای گرفتن مالیات از سفته بازها</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="mb-0"><a href="#">مهدی رضایی</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>11 دی، 1400</td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <a href="#" class="badge text-bg-danger mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>ورزش</a>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <span class="badge bg-success bg-opacity-10 text-success mb-2">فعال</span>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف"><i class="bi bi-trash"></i></a>
+                                                <a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش"><i class="bi bi-pencil-square"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Table item -->
+                                    <tr>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">رونمایی از طرح بزرگترین تلسکوپ نوری آسیا</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="mb-0"><a href="#">نیلوفر راد</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>22 آذر، 1400</td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <a href="#" class="badge text-bg-success mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>گردشگری</a>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <span class="badge bg-success bg-opacity-10 text-success mb-2">فعال</span>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف"><i class="bi bi-trash"></i></a>
+                                                <a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش"><i class="bi bi-pencil-square"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Table item -->
+                                    <tr>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">عادات بدی که افراد در صنعت باید آنها را ترک کنند!</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="mb-0"><a href="#">سهراب احمدی</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>6 آبان، 1400</td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <a href="#" class="badge text-bg-primary mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>بین الملل</a>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <span class="badge bg-danger bg-opacity-10 text-danger mb-2">غیرفعال</span>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف"><i class="bi bi-trash"></i></a>
+                                                <a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش"><i class="bi bi-pencil-square"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Table item -->
+                                    <tr>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">سال 2022 رویایی و فوق العاده برای طارمی</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <h6 class="mb-0"><a href="#">علی صادقی</a></h6>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>14 بهمن، 1400</td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <a href="#" class="badge text-bg-danger mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>اقتصاد</a>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <span class="badge bg-success bg-opacity-10 text-success mb-2">فعال</span>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف"><i class="bi bi-trash"></i></a>
+                                                <a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش"><i class="bi bi-pencil-square"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                                <!-- Table body END -->
+                            </table>
+                        </div>
+                        <!-- Blog list table END -->
+                        <!-- Pagination START -->
+                        <div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4 mt-sm-3">
+                            <!-- Content -->
+                            <p class="mb-sm-0 text-center text-sm-start">نمایش 1 تا 8 از 20</p>
+                            <!-- Pagination -->
+                            <nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
+                                <ul class="pagination pagination-sm pagination-bordered mb-0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">قبل</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item disabled"><a class="page-link" href="#">..</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">15</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">بعد</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Pagination END -->
+                    </div>
+                </div>
+                <!-- Blog list table END -->
+            </div>
+        </div>
+    </div>
+</section>
