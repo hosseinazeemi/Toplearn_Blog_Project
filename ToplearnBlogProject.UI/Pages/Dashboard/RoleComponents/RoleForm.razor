@@ -1,0 +1,31 @@
+﻿
+<EditForm Model="Role" OnValidSubmit="Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-3">
+                <label class="form-label">نام انگلیسی</label>
+                <input required id="EnName" name="EnName" @bind-value="@Role.EnName" type="text" class="form-control" placeholder="نام انگلیسی را وارد کنید">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="mb-3">
+                <label class="form-label">نام فارسی</label>
+                <input required id="FaName" name="FaName" @bind-value="@Role.FaName" type="text" class="form-control" placeholder="نام فارسی را وارد کنید">
+            </div>
+        </div>
+        <div class="col-md-12 text-start">
+            <button class="btn btn-primary w-100" type="submit">
+                @if (Role.Id > 0)
+                {
+                    <span>ویرایش اطلاعات</span>
+                }
+                else
+                {
+                    <span>ثبت اطلاعات</span>
+                }
+            </button>
+        </div>
+    </div>
+</EditForm>

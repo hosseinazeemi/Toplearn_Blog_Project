@@ -1,0 +1,26 @@
+﻿@using ToplearnBlogProject.UI.Shared.Dashboard.Layouts
+@layout DashboardLayout
+@page "/dashboard/roles/create"
+
+<section class="py-4">
+    <div class="container">
+        <div class="row pb-4">
+            <div class="col-12">
+                <!-- Title -->
+                <h1 class="mb-0 h3">ایجاد نقش جدید</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- Chart START -->
+                <div class="card border">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- Form START -->
+                        <RoleForm Role="Role" RoleCallback="Create" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

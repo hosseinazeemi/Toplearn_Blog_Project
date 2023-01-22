@@ -10,4 +10,8 @@
     <PackageReference Include="MudBlazor" Version="6.1.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ToplearnBlogProject.Shared\ToplearnBlogProject.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
