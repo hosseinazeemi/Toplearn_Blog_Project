@@ -12,13 +12,13 @@ namespace ToplearnBlogProject.UI.Services.Repositories
             _httpService = httpService;
         }
 
-        public ResponseDto<bool> Create(RoleDto data)
+        public async Task<ResponseDto<bool>> Create(RoleDto data)
         {
-            return _httpService.PostAsync<bool, RoleDto>($"{baseUrl}/create", data).Result;
+            return await _httpService.PostAsync<bool, RoleDto>($"{baseUrl}/create", data);
         }
     }
     public interface IRoleService
     {
-        ResponseDto<bool> Create(RoleDto data);
+        Task<ResponseDto<bool>> Create(RoleDto data);
     }
 }

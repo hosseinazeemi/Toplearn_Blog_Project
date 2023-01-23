@@ -18,7 +18,7 @@ namespace ToplearnBlogProject.UI.Pages.Dashboard.RoleComponents
         {
             showProgress = true;
             StateHasChanged();
-            var result = _repo.Create(Role);
+            var result = await _repo.Create(Role);
             if (result.Status)
             {
                 _snackbar.Add(result.Message, Severity.Success);
@@ -27,7 +27,6 @@ namespace ToplearnBlogProject.UI.Pages.Dashboard.RoleComponents
             {
                 _snackbar.Add(result.Message, Severity.Error);
             }
-            _snackbar.Add("موفقیت آمیز", Severity.Success);
             showProgress = false;
         }
         protected override void OnInitialized()

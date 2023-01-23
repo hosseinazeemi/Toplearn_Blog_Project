@@ -39,6 +39,7 @@ namespace Company.WebApplication1
 
             app.UseRouting();
 
+            app.MapRazorPages();
             app.MapBlazorHub();
             app.MapFallbackToPage("/_Host");
 
