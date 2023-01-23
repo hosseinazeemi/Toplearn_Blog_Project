@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor.Services;
-using ToplearnBlogProject.UI.Data;
 using ToplearnBlogProject.UI.Services;
 using ToplearnBlogProject.UI.Services.Repositories;
 
@@ -16,7 +15,6 @@ namespace Company.WebApplication1
             // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
-            builder.Services.AddSingleton<WeatherForecastService>();
 
             string apiUrl = builder.Configuration.GetValue<string>("ApiBaseUrl");
             builder.Services.AddHttpClient<IHttpService, HttpService>(op =>
