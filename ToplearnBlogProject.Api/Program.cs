@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ToplearnBlogProject.Application.Services;
+using ToplearnBlogProject.Application.Services.Repositories;
 using ToplearnBlogProject.Persistence.Context;
 
 namespace ToplearnBlogProject.Api
@@ -20,6 +21,8 @@ namespace ToplearnBlogProject.Api
             string connection = builder.Configuration.GetSection("ConnectionStrings")["DefaultConnection"];
             builder.Services.AddDbContext<AppDbContext>(p => p.UseSqlServer(connection));
             builder.Services.AddScoped<IAppDbContext, AppDbContext>();
+            builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

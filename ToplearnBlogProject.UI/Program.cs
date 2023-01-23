@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor.Services;
 using ToplearnBlogProject.UI.Data;
+using ToplearnBlogProject.UI.Services;
+using ToplearnBlogProject.UI.Services.Repositories;
 
 namespace Company.WebApplication1
 {
@@ -15,6 +17,13 @@ namespace Company.WebApplication1
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
             builder.Services.AddSingleton<WeatherForecastService>();
+
+            string apiUrl = builder.Configuration.GetValue<string>("ApiBaseUrl");
+            builder.Services.AddHttpClient<IHttpService, HttpService>(op =>
+            {
+                op.BaseAddress = new Uri(apiUrl);
+            });
+            builder.Services.AddScoped<IRoleService, RoleService>();
             builder.Services.AddMudServices();
             var app = builder.Build();
 
