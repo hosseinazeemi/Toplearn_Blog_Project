@@ -22,6 +22,7 @@ namespace ToplearnBlogProject.UI.Pages.Dashboard.RoleComponents
             if (result.Status)
             {
                 _snackbar.Add(result.Message, Severity.Success);
+                Role = new RoleDto();
             }
             else
             {

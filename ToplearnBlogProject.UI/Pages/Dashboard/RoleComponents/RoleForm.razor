@@ -6,13 +6,15 @@
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label">نام انگلیسی</label>
-                <input required id="EnName" name="EnName" @bind-value="@Role.EnName" type="text" class="form-control" placeholder="نام انگلیسی را وارد کنید">
+                <input id="EnName" name="EnName" @bind-value="@Role.EnName" type="text" class="form-control" placeholder="نام انگلیسی را وارد کنید">
+                <ValidationMessage For="(() => Role.EnName)" />
             </div>
         </div>
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label">نام فارسی</label>
-                <input required id="FaName" name="FaName" @bind-value="@Role.FaName" type="text" class="form-control" placeholder="نام فارسی را وارد کنید">
+                <input id="FaName" name="FaName" @bind-value="@Role.FaName" type="text" class="form-control" placeholder="نام فارسی را وارد کنید">
+                <ValidationMessage For="(() => Role.FaName)" />
             </div>
         </div>
         <div class="col-md-12 text-start">
