@@ -80,12 +80,12 @@
                                                         <td>@item.FaName</td>
                                                         <td>
                                                             <div class="d-flex gap-2">
-                                                                <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Message" aria-label="Message">
+                                                                <button class="btn btn-primary btn-round mb-0" @onclick="@(() => NavigateToEdit(item.Id))">
                                                                     <i class="bi bi-pen"></i>
-                                                                </a>
-                                                                <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Block" aria-label="Block">
+                                                                </button>
+                                                                <button class="btn btn-danger btn-round mb-0" @onclick="@(() => ShowRemoveDialog(item))">
                                                                     <i class="fas fa-trash"></i>
-                                                                </a>
+                                                                </button>
                                                             </div>
                                                         </td>
                                                     </tr>

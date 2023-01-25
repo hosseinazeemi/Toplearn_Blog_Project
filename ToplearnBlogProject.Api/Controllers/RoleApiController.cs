@@ -38,6 +38,27 @@ namespace ToplearnBlogProject.Api.Controllers
                 return new ResponseDto<bool>(false, e.Message, false);
             }
         }
+
+        [HttpPost("update")]
+        public ResponseDto<bool> Update(RoleDto data)
+        {
+            Role role = _mapper.Map<RoleDto, Role>(data);
+
+            try
+            {
+                var result = _roleRepository.Update(role).Result;
+                if (result)
+                {
+                    return new ResponseDto<bool>(true, "موفقیت آمیز", true);
+                }
+                return new ResponseDto<bool>(false, "سیستم با خطا مواجه شد", false);
+            }
+            catch (Exception e)
+            {
+                return new ResponseDto<bool>(false, e.Message, false);
+            }
+        }
+
         [HttpGet("get-all")]
         public ResponseDto<List<RoleDto>> GetAll()
         {
@@ -51,6 +72,34 @@ namespace ToplearnBlogProject.Api.Controllers
             {
 
                 return new ResponseDto<List<RoleDto>>(false, e.Message, null);
+            }
+        }
+        [HttpPost("remove")]
+        public ResponseDto<bool> Remove([FromBody]int id)
+        {
+            try
+            {
+                var result = _roleRepository.Remove(id).Result;
+                return new ResponseDto<bool>(true , "موفقیت آمیز" , result);
+            }
+            catch (Exception e)
+            {
+                return new ResponseDto<bool>(false, e.Message, false);
+            }
+        }
+
+        [HttpPost("find")]
+        public ResponseDto<RoleDto> Find([FromBody]int id)
+        {
+            try
+            {
+                var result = _roleRepository.FindById(id).Result;
+                RoleDto role = _mapper.Map<Role, RoleDto>(result);
+                return new ResponseDto<RoleDto>(true , "دریافت اطلاعات انجام شد" , role);
+            }
+            catch (Exception)
+            {
+                return new ResponseDto<RoleDto>(false, "خطا", null);
             }
         }
     }
