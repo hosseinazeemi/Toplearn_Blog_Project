@@ -17,50 +17,46 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav navbar-nav-scroll mx-auto">
 
-                    <!-- Nav item 1 Demos -->
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="bi bi-house-door me-1"></i>پیشخوان</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">
+                            <i class="bi bi-house-door me-1"></i>داشبورد</a>
+                     </li>
 
-                    <!-- Nav item 2 Post -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="postMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-pencil me-1"></i>اخبار</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="postMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-tags me-1"></i>دسته بندی و برچسب</a>
                         <ul class="dropdown-menu" aria-labelledby="postMenu">
-                            <!-- dropdown submenu -->
-                            <li> <a class="dropdown-item" href="dashboard-post-list.html">لیست</a> </li>
-                            <li> <a class="dropdown-item" href="dashboard-post-categories.html">دسته بندی</a> </li>
-                            <li> <a class="dropdown-item" href="dashboard-post-create.html">ایجاد</a> </li>
-                            <li> <a class="dropdown-item" href="dashboard-post-edit.html">ویرایش</a> </li>
+                            <li> <a class="dropdown-item" href="/dashboard/categories/create">ثبت دسته بندی</a> </li>
+                            <li> <a class="dropdown-item" href="/dashboard/categories/list">لیست دسته بندی</a> </li>
+                            <li> <a class="dropdown-item" href="/dashboard/tags/create">ثبت برچسب</a> </li>
+                            <li> <a class="dropdown-item" href="/dashboard/tags/list">لیست برچسب</a> </li>
                         </ul>
                     </li>
 
-                    <!-- Nav item 3 Pages -->
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="postMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-people me-1"></i>مدیر و نقش</a>
+                        <ul class="dropdown-menu" aria-labelledby="postMenu">
+                            <li> <a class="dropdown-item" href="/dashboard/roles/create">ثبت نقش</a> </li>
+                            <li> <a class="dropdown-item" href="/dashboard/roles/list">لیست نقش</a> </li>
+                            <li> <a class="dropdown-item" href="/dashboard/admins/create">ثبت مدیر</a> </li>
+                            <li> <a class="dropdown-item" href="/dashboard/admins/list">لیست مدیر</a> </li>
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-folder me-1"></i>صفحات</a>
-                        <ul class="dropdown-menu" aria-labelledby="pagesMenu">
-                            <li> <a class="dropdown-item" href="dashboard-author-list.html">لیست نویسندگان</a></li>
-                            <li> <a class="dropdown-item" href="dashboard-author-single.html">جزئیات نویسنده</a></li>
-                            <li> <a class="dropdown-item" href="dashboard-edit-profile.html">ویرایش حساب کاربری</a></li>
-                            <li> <a class="dropdown-item" href="dashboard-reviews.html">نظرات</a></li>
-                            <li> <a class="dropdown-item" href="dashboard-settings.html">تنظیمات</a></li>
-                            <li class="dropdown-divider"></li>
-                            <li> <a class="dropdown-item" href="#" target="_blank"> <i class="text-warning fa-fw bi bi-life-preserver me-2"></i>پشتیبانی</a></li>
-                            <li> <a class="dropdown-item" href="../rtl/docs/index.html" target="_blank"> <i class="text-danger fa-fw bi bi-card-text me-2"></i>داکیومنت</a></li>
-                            <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="../ltr/index.html" target="_blank"> <i class="text-info fa-fw bi bi-toggle-off me-2"></i>نسخه LTR</a></li>
-                            <li><a class="dropdown-item" href="#" target="_blank"> <i class="text-success fa-fw bi bi-cloud-download-fill me-2"></i>خرید قالب</a> </li>
+                        <a class="nav-link dropdown-toggle" href="#" id="postMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-newspaper me-1"></i>خبر و مقاله</a>
+                        <ul class="dropdown-menu" aria-labelledby="postMenu">
+                            <li> <a class="dropdown-item" href="/dashboard/roles/create">ثبت خبر / مقاله</a> </li>
+                            <li> <a class="dropdown-item" href="/dashboard/roles/list">لیست اخبار</a> </li>
+                            <li> <a class="dropdown-item" href="/dashboard/admins/create">نظرات کاربران</a> </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="postMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-gear me-1"></i>تنظیمات</a>
+                        <ul class="dropdown-menu" aria-labelledby="postMenu">
+                            <li> <a class="dropdown-item" href="/dashboard/setting">بخش تنظیمات سایت</a> </li>
                         </ul>
                     </li>
                 </ul>
 
-                <!-- Search dropdown START -->
-                <div class="nav my-3 my-xl-0 px-4 px-lg-1 flex-nowrap align-items-center">
-                    <div class="nav-item w-100">
-                        <form class="position-relative">
-                            <input class="form-control pe-5 bg-transparent" type="search" placeholder="جستجو" aria-label="Search">
-                            <button class="btn bg-transparent border-0 px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6 "></i></button>
-                        </form>
-                    </div>
-                </div>
-                <!-- Search dropdown END -->
             </div>
             <!-- Main navbar END -->
             <!-- Nav right START -->

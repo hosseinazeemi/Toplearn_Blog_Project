@@ -18,6 +18,7 @@ namespace ToplearnBlogProject.UI.Pages.Dashboard.RoleComponents
         {
             showProgress = true;
             StateHasChanged();
+            await Task.Delay(1200);
             var result = await _repo.Create(Role);
             if (result.Status)
             {
