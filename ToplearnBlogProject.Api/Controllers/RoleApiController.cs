@@ -38,5 +38,20 @@ namespace ToplearnBlogProject.Api.Controllers
                 return new ResponseDto<bool>(false, e.Message, false);
             }
         }
+        [HttpGet("get-all")]
+        public ResponseDto<List<RoleDto>> GetAll()
+        {
+            try
+            {
+                var result = _roleRepository.GetAll().Result;
+                List<RoleDto> roles = _mapper.Map<List<Role>, List<RoleDto>>(result);
+                return new ResponseDto<List<RoleDto>>(true , "اطلاعات با موفقیت دریافت شد" , roles);
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseDto<List<RoleDto>>(false, e.Message, null);
+            }
+        }
     }
 }

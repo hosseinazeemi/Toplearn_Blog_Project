@@ -30,10 +30,16 @@ namespace ToplearnBlogProject.Application.Services.Repositories
                 throw new Exception(e.Message);
             }
         } 
+        public async Task<List<Role>> GetAll()
+        {
+            //return await Task.FromResult(_dbContext.Roles.ToList());
+            return _dbContext.Roles.ToList();
+        }
     }
 
     public interface IRoleRepository
     {
         Task<int> Create(Role model);
+        Task<List<Role>> GetAll();
     }
 }

@@ -32,9 +32,25 @@ namespace ToplearnBlogProject.UI.Services
             }
             return new ResponseDto<TResult>(false, "خطا", default);
         }
+        public async Task<ResponseDto<TResult>> GetAsync<TResult>(string url)
+        {
+            var response = await _httpClient.GetAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadAsStringAsync();
+                var deserialize = JsonConvert.DeserializeObject<ResponseDto<TResult>>(result);
+                if (deserialize != null)
+                {
+                    return await Task.FromResult(deserialize);
+                }
+            }
+
+            return new ResponseDto<TResult>(false , "خطا" , default);
+        }
     }
     public interface IHttpService
     {
+        Task<ResponseDto<TResult>> GetAsync<TResult>(string url);
         Task<ResponseDto<TResult>> PostAsync<TResult, TData>(string url, TData data);
     }
 }

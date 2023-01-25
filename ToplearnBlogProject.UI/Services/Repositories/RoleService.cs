@@ -16,9 +16,14 @@ namespace ToplearnBlogProject.UI.Services.Repositories
         {
             return await _httpService.PostAsync<bool, RoleDto>($"{baseUrl}/create", data);
         }
+        public async Task<ResponseDto<List<RoleDto>>> GetAll()
+        {
+            return await _httpService.GetAsync<List<RoleDto>>($"{baseUrl}/get-all");
+        }
     }
     public interface IRoleService
     {
         Task<ResponseDto<bool>> Create(RoleDto data);
+        Task<ResponseDto<List<RoleDto>>> GetAll();
     }
 }
