@@ -39,6 +39,7 @@ namespace ToplearnBlogProject.Api
 
             app.UseAuthorization();
 
+            app.UseStaticFiles();
             app.MapControllers();
 
             app.Run();

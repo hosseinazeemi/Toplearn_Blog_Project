@@ -34,7 +34,7 @@ namespace ToplearnBlogProject.Application.Services.Repositories
         public async Task<List<Admin>> GetAll()
         {
             //return await Task.FromResult(_dbContext.Admins.ToList());
-            return _dbContext.Admins.ToList();
+            return _dbContext.Admins.Include(p => p.Role).ToList();
         }
 
         public async Task<bool> Remove(int id)
