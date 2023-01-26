@@ -1,0 +1,69 @@
+﻿@using ToplearnBlogProject.UI.Shared.Dashboard.Layouts
+@layout DashboardLayout
+@page "/dashboard/admins/list"
+
+<section class="py-4">
+    <div class="container">
+        <div class="row g-4 pb-4">
+            <div class="col-12">
+                <div class="d-sm-flex justify-content-between align-items-center">
+                    <h1 class="mb-sm-0 h3">لیست مدیران</h1>
+                    <a href="/dashboard/admins/create" class="btn btn-sm btn-primary mb-0">
+                        <i class="fas fa-plus me-2"></i>ثبت مدیر جدید
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="card border">
+                    <div class="card-header border-bottom p-3">
+                        <div class="row g-3 align-items-center justify-content-between">
+                            <div class="col-md-12">
+                                <form class="rounded position-relative">
+                                    <input class="form-control bg-transparent" type="search" placeholder="جستجو" aria-label="Search">
+                                    <button class="btn bg-transparent border-0 px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6 "></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 pb-0">
+                        <div class="table-responsive border-0">
+                            <table class="table align-middle p-4 mb-0 table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col" class="border-0">شناسه</th>
+                                        <th scope="col" class="border-0">عنوان انگلیسی</th>
+                                        <th scope="col" class="border-0">عنوان فارسی</th>
+                                        <th scope="col" class="border-0">تنظیمات</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody class="border-top-0">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>ali</td>
+                                        <td>hoseini</td>
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-primary btn-round mb-0">
+                                                    <i class="bi bi-pen"></i>
+                                                </button>
+                                                <button class="btn btn-danger btn-round mb-0">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            @*<MudOverlay @bind-Visible="showProgress" LightBackground="true" AutoClose="true">
+                            <MudProgressCircular Color="Color.Primary" Size="Size.Small" Indeterminate="true" />
+                            </MudOverlay>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
