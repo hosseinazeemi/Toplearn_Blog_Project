@@ -1,0 +1,65 @@
+﻿@using Tewr.Blazor.FileReader
+@using ToplearnBlogProject.Shared.Dto.Global
+@inject IFileReaderService fileService
+
+<div>
+    <label class="form-label">فایل یا انتخاب کنید</label>
+    <input class="form-control" type="file" @ref="fileRef" @onchange="OnSelectFile" />
+    @*<img src="" class="rounded border" width="200" />*@
+    @if (SelectedFile != null)
+    {
+        <div class="row">
+            <div class="col-12 p-1">
+                <embed class="file-preview" type="@SelectedFile.MimeType"
+                   width="300" height="240"
+                   src="data:@SelectedFile.MimeType;base64,@(Convert.ToBase64String(FileBytes))" />
+            </div>
+            <div class="col-12 p-1">
+                <button class="btn btn-success" type="button" @onclick="ConfirmFile">تایید فایل ها</button>
+            </div>
+        </div>
+    }
+</div>
+
+
+@code {
+    ElementReference fileRef { get; set; }
+    byte[] FileBytes { get; set; }
+    [Parameter]
+    public EventCallback<FileDto> FileCallback { get; set; }
+    public FileDto SelectedFile { get; set; }
+
+    public async Task OnSelectFile()
+    {
+        foreach (var item in await fileService.CreateReference(fileRef).EnumerateFilesAsync())
+        {
+            using (MemoryStream ms = await item.CreateMemoryStreamAsync(1024 * 2))
+            {
+                FileBytes = new byte[ms.Length];
+                ms.Read(FileBytes, 0, (int)ms.Length);
+            }
+
+            var fileInfo = item.ReadFileInfoAsync().Result;
+            SelectedFile = new FileDto
+                {
+                    Bytes = FileBytes,
+                    Extension = fileInfo.Name.Split(".")[1],
+                    MimeType = fileInfo.Type,
+                    Name = fileInfo.Name
+                };
+        }
+    }
+    public async Task ConfirmFile()
+    {
+        await FileCallback.InvokeAsync(SelectedFile);
+        FileBytes = new byte[0];
+        SelectedFile = null;
+    }
+    }
+
+<style>
+    .file-preview {
+        border-radius: 10px;
+        border: 1px solid gray;
+    }
+</style>

@@ -23,4 +23,8 @@
     <ProjectReference Include="..\ToplearnBlogProject.Shared\ToplearnBlogProject.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>

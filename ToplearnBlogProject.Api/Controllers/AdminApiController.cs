@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ToplearnBlogProject.Api.Helpers;
+using ToplearnBlogProject.Api.Services;
 using ToplearnBlogProject.Application.Services.Repositories;
 using ToplearnBlogProject.Domain.Entities;
 using ToplearnBlogProject.Shared.Dto;
@@ -15,9 +16,11 @@ namespace ToplearnBlogProject.Api.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IAdminRepository _adminRepository;
-        public AdminApiController(IMapper mapper, IAdminRepository adminRepository)
+        private readonly IUploadFileService _upload;
+        public AdminApiController(IMapper mapper, IAdminRepository adminRepository, IUploadFileService upload)
         {
             _mapper = mapper;
+            _upload = upload;
             _adminRepository = adminRepository;
         }
         [HttpPost("create")]
@@ -27,6 +30,10 @@ namespace ToplearnBlogProject.Api.Controllers
 
             try
             {
+                if (data.File != null)
+                {
+                    admin.Avatar = _upload.Save(data.File, nameof(Admin).ToLower());
+                }
                 admin.CreatedAt = DateTime.Now;
                 admin.Password = HashPassword.Generate(admin.Password);
                 var result = _adminRepository.Create(admin).Result;

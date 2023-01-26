@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using ToplearnBlogProject.Shared.Dto;
+using ToplearnBlogProject.Shared.Dto.Global;
 using ToplearnBlogProject.UI.Services.Repositories;
 
 namespace ToplearnBlogProject.UI.Pages.Dashboard.AdminComponents
@@ -16,14 +18,19 @@ namespace ToplearnBlogProject.UI.Pages.Dashboard.AdminComponents
         private IRoleService _roleService { get; set; }
 
         public bool showProgress { get; set; }
+        private EditContext editContext { get; set; }
         public async Task Submit()
         {
-            await AdminCallback.InvokeAsync();
+            if (editContext.Validate())
+            {
+                await AdminCallback.InvokeAsync();
+            }
         }
 
         protected override async Task OnInitializedAsync()
         {
             showProgress = true;
+            editContext = new EditContext(Admin);
             StateHasChanged();
             var response = await _roleService.GetAll();
 
@@ -35,6 +42,11 @@ namespace ToplearnBlogProject.UI.Pages.Dashboard.AdminComponents
                 Roles = new List<RoleDto>();
             }
             showProgress = false;
+        }
+
+        public async Task OnSelectedFile(FileDto file)
+        {
+            Admin.File = file;
         }
     }
 }

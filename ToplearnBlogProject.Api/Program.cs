@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ToplearnBlogProject.Api.Services;
 using ToplearnBlogProject.Application.Services;
 using ToplearnBlogProject.Application.Services.Repositories;
 using ToplearnBlogProject.Persistence.Context;
@@ -23,6 +24,7 @@ namespace ToplearnBlogProject.Api
             builder.Services.AddScoped<IAppDbContext, AppDbContext>();
             builder.Services.AddScoped<IRoleRepository, RoleRepository>();
             builder.Services.AddScoped<IAdminRepository, AdminRepository>();
+            builder.Services.AddScoped<IUploadFileService, UploadFileService>();
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             var app = builder.Build();
 

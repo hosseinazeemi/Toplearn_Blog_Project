@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToplearnBlogProject.Shared.Dto.Global;
 
 namespace ToplearnBlogProject.Shared.Dto
 {
@@ -25,5 +26,6 @@ namespace ToplearnBlogProject.Shared.Dto
         public bool IsActive { get; set; }
         public DateTime CreatedAt { get; set; }
         public RoleDto? Role { get; set; }
+        public FileDto? File { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿<EditForm Model="Admin" OnValidSubmit="Submit">
+﻿@using ToplearnBlogProject.UI.Shared.Dashboard
+<EditForm EditContext="editContext">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -6,16 +7,16 @@
         <div class="col-12">
             <div class="mb-3">
                 <label class="form-label">نقش</label>
-               @if (Roles != null)
+                @if (Roles != null)
                 {
                     <select class="form-select" @bind="@Admin.RoleId">
                         @foreach (var item in Roles)
                         {
                             <option value="@item.Id">@item.EnName (@item.FaName)</option>
                         }
-                </select>
+                    </select>
                 }
-                
+
                 <ValidationMessage For="@(() => Admin.RoleId)" />
             </div>
         </div>
@@ -54,26 +55,19 @@
         </div>
         <div class="col-12">
             <div class="mb-3">
-                <h6 class="my-2">تصویر پروفایل</h6>
-                <label class="w-100" style="cursor:pointer;">
-                    <div class="input-group flex-row-reverse">
-                        <input type="text" class="form-control upload-name" />
-                        <span class="btn btn-custom cursor-pointer upload-button">آپلود فایل</span>
-                    </div>
-                    <input class="form-control stretched-link d-none hidden-upload" type="file" name="my-image" accept="image/gif, image/jpeg, image/png" />
-                </label>
+                <FileUploadComponent FileCallback="OnSelectedFile" />
             </div>
         </div>
         <div class="col-6">
             <div class="mb-3">
                 <div class="form-check form-switch form-check-md mb-3">
-                    <input class="form-check-input" type="checkbox" name="IsActive" checked="" @bind-value="@Admin.IsActive">
+                    <input class="form-check-input" type="checkbox" name="IsActive" @bind-value="@Admin.IsActive">
                     <label class="form-check-label" for="availabilityCheck">فعال / غیر فعال</label>
                 </div>
             </div>
         </div>
         <div class="col-md-12 text-start">
-            <button class="btn btn-primary w-100" type="submit">
+            <button class="btn btn-primary w-100" type="button" @onclick="Submit">
                 @if (Admin.Id > 0)
                 {
                     <span>ویرایش اطلاعات</span>

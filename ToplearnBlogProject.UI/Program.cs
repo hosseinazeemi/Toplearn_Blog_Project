@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor.Services;
+using Tewr.Blazor.FileReader;
 using ToplearnBlogProject.UI.Services;
 using ToplearnBlogProject.UI.Services.Repositories;
 
@@ -24,6 +25,7 @@ namespace Company.WebApplication1
             builder.Services.AddScoped<IRoleService, RoleService>();
             builder.Services.AddScoped<IAdminService, AdminService>();
             builder.Services.AddMudServices();
+            builder.Services.AddFileReaderService();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
