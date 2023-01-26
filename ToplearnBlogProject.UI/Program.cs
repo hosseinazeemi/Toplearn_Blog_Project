@@ -22,6 +22,7 @@ namespace Company.WebApplication1
                 op.BaseAddress = new Uri(apiUrl);
             });
             builder.Services.AddScoped<IRoleService, RoleService>();
+            builder.Services.AddScoped<IAdminService, AdminService>();
             builder.Services.AddMudServices();
             var app = builder.Build();
 

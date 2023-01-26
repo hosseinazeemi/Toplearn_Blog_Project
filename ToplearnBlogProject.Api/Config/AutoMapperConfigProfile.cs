@@ -10,6 +10,8 @@ namespace ToplearnBlogProject.Api.Config
         {
             CreateMap<RoleDto, Role>();
             CreateMap<Role, RoleDto>();
+            CreateMap<AdminDto, Admin>();
+            CreateMap<Admin, AdminDto>();
         }
     }
 }

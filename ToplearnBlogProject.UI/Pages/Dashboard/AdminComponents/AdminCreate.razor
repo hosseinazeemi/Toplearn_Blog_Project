@@ -13,10 +13,10 @@
             <div class="col-12">
                 <div class="card border">
                     <div class="card-body">
-                        <AdminForm />
-                        @*<MudOverlay @bind-Visible="showProgress" LightBackground="true" AutoClose="true">
+                        <AdminForm Admin="Admin" AdminCallback="Create" />
+                        <MudOverlay @bind-Visible="showProgress" LightBackground="true" AutoClose="true">
                             <MudProgressCircular Color="Color.Primary" Size="Size.Small" Indeterminate="true" />
-                        </MudOverlay>*@
+                        </MudOverlay>
                     </div>
                 </div>
             </div>
