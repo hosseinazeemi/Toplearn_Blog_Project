@@ -6,17 +6,24 @@
     <div class="container">
         <div class="row pb-4">
             <div class="col-12">
-                <h1 class="mb-0 h3">ویرایش نقش</h1>
+                <h1 class="mb-0 h3">ویرایش مدیر</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
                 <div class="card border">
                     <div class="card-body">
-                        <AdminForm />
-                       @* <MudOverlay @bind-Visible="showProgress" LightBackground="true" AutoClose="true">
-                            <MudProgressCircular Color="Color.Primary" Size="Size.Small" Indeterminate="true" />
-                        </MudOverlay>*@
+                        @if (Admin != null)
+                        {
+                            <AdminForm Admin="Admin" AdminCallback="Update" />
+                        }
+                        else
+                        {
+                            <MudOverlay @bind-Visible="showProgress" LightBackground="true" AutoClose="true">
+                                <MudProgressCircular Color="Color.Primary" Size="Size.Small" Indeterminate="true" />
+                            </MudOverlay>
+                        }
+
                     </div>
                 </div>
             </div>

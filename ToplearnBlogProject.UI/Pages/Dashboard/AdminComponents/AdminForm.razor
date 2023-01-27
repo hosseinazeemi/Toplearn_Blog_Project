@@ -1,4 +1,5 @@
 ﻿@using ToplearnBlogProject.UI.Shared.Dashboard
+
 <EditForm EditContext="editContext">
     <DataAnnotationsValidator />
     <ValidationSummary />
@@ -9,10 +10,16 @@
                 <label class="form-label">نقش</label>
                 @if (Roles != null)
                 {
-                    <select class="form-select" @bind="@Admin.RoleId">
+                    <select class="form-select" @onchange="OnChangeRole">
                         @foreach (var item in Roles)
                         {
+                            if (Admin.RoleId == item.Id)
+                            {
+                                <option value="@item.Id" selected>@item.EnName (@item.FaName)</option>
+                            }else
+                            {
                             <option value="@item.Id">@item.EnName (@item.FaName)</option>
+                            }
                         }
                     </select>
                 }
@@ -50,11 +57,20 @@
                 <label class="form-label">کلمه عبور</label>
                 <input name="Password" type="text" @bind-value="@Admin.Password" class="form-control" placeholder="کلمه عبور را وارد کنید">
                 <ValidationMessage For="@(() => Admin.Password)" />
-
+                <p class="text-danger">
+                    فقط جهت تغییر کلمه عبور این فیلد را پر کنید
+                </p>
             </div>
         </div>
         <div class="col-12">
             <div class="mb-3">
+                @if (!string.IsNullOrEmpty(Admin.Avatar))
+                {
+                    <div class="col-4">
+                        <img src="@baseImageUrl/@Admin.Avatar" class="rounded border" />
+                    </div>
+                }
+
                 <FileUploadComponent FileCallback="OnSelectedFile" />
             </div>
         </div>

@@ -55,7 +55,7 @@
                                                 <td>
                                                     @if (!string.IsNullOrEmpty(item.Avatar))
                                                     {
-                                                        <img src="@imageBaseUrl/admin/@item.Avatar" width="50" class="rounded-circle border border-white border-3 shadow" />
+                                                        <img src="@imageBaseUrl/@item.Avatar" width="50" class="rounded-circle border border-white border-3 shadow" />
                                                     }
                                                     else
                                                     {
@@ -89,10 +89,10 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex gap-2">
-                                                        <button class="btn btn-primary btn-round mb-0">
+                                                        <button class="btn btn-primary btn-round mb-0" @onclick="@(() => NavigateToEdit(item.Id))">
                                                             <i class="bi bi-pen"></i>
                                                         </button>
-                                                        <button class="btn btn-danger btn-round mb-0">
+                                                        <button class="btn btn-danger btn-round mb-0" @onclick="@(() => ShowRemoveDialog(item))">
                                                             <i class="fas fa-trash"></i>
                                                         </button>
                                                     </div>

@@ -45,7 +45,7 @@ namespace ToplearnBlogProject.UI.Pages.Dashboard.AdminComponents
         {
             bool? result = await _dialog.ShowMessageBox(
             "اخطار",
-            $"آیا از حذف نقش {string.Concat(item.Name , " " , item.LastName)} اطمینان دارید ؟",
+            $"آیا از حذف مدیر {string.Concat(item.Name , " " , item.LastName)} اطمینان دارید ؟",
             yesText: "بله !", cancelText: "خیر");
 
             if (result == true)

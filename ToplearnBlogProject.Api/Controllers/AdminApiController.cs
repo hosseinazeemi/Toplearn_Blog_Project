@@ -59,12 +59,16 @@ namespace ToplearnBlogProject.Api.Controllers
             }
             try
             {
-                var result = _adminRepository.Update(admin).Result;
-                if (result)
+                if (data.File != null)
                 {
-                    return new ResponseDto<bool>(true, "موفقیت آمیز", true);
+                    admin.Avatar = _upload.Save(data.File, nameof(Admin).ToLower());
                 }
-                return new ResponseDto<bool>(false, "سیستم با خطا مواجه شد", false);
+                var result = _adminRepository.Update(admin).Result;
+                if (data.Avatar != null)
+                {
+                    _upload.Delete(data.Avatar, nameof(Admin).ToLower());
+                }
+                return new ResponseDto<bool>(true, "موفقیت آمیز", true);
             }
             catch (Exception e)
             {
@@ -93,7 +97,11 @@ namespace ToplearnBlogProject.Api.Controllers
             try
             {
                 var result = _adminRepository.Remove(id).Result;
-                return new ResponseDto<bool>(true, "موفقیت آمیز", result);
+                if (!string.IsNullOrEmpty(result))
+                {
+                    _upload.Delete(result, nameof(Admin).ToLower());
+                }
+                return new ResponseDto<bool>(true, "موفقیت آمیز", true);
             }
             catch (Exception e)
             {
