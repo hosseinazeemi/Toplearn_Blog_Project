@@ -41,5 +41,8 @@
 
 /* Dashboard */
 .main-dashboard {
-    min-height:90vh;
+    min-height:83vh;
+}
+.card .card-body{
+    min-height:200px;
 }

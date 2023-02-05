@@ -24,6 +24,7 @@ namespace ToplearnBlogProject.Api
             builder.Services.AddScoped<IAppDbContext, AppDbContext>();
             builder.Services.AddScoped<IRoleRepository, RoleRepository>();
             builder.Services.AddScoped<IAdminRepository, AdminRepository>();
+            builder.Services.AddScoped<ITagRepository, TagRepository>();
             builder.Services.AddScoped<IUploadFileService, UploadFileService>();
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             var app = builder.Build();

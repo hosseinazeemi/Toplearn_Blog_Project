@@ -1,0 +1,26 @@
+﻿
+<EditForm Model="Tag" OnValidSubmit="Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-3">
+                <label class="form-label">نام</label>
+                <input id="Name" name="Name" @bind-value="@Tag.Name" type="text" class="form-control" placeholder="نام را وارد کنید">
+                <ValidationMessage For="(() => Tag.Name)" />
+            </div>
+        </div>
+        <div class="col-md-12 text-start">
+            <button class="btn btn-primary w-100" type="submit">
+                @if (Tag.Id > 0)
+                {
+                    <span>ویرایش اطلاعات</span>
+                }
+                else
+                {
+                    <span>ثبت اطلاعات</span>
+                }
+            </button>
+        </div>
+    </div>
+</EditForm>
